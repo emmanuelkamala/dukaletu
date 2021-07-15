@@ -1,27 +1,15 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import data from './data.js';
+import productRouter from './routes/productRouter.js';
 import userRouter from './routes/userRouter.js';
 
 const app = express();
 
 const MONGO_URI = 'mongodb+srv://ejoka:tanzania@cluster0.zlvvs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
-app.get('/api/products/:id', (req, res) => {
-  const product = data.products.find(prod => prod._id === parseInt(req.params.id));
- 
-  if (product){
-    res.send(product)
-  } else {
-    res.status(404).send({ message: 'Product Not Found' })
-  }
-})
-
-app.get('/api/products', (req, res) => {
-  res.send(data.products);
-})
 
 app.use('/api/users', userRouter)
+app.use('/api/products', productRouter)
 
 app.get('/', (req, res) => {
   res.send('Server is ready');
