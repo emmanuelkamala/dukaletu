@@ -1,8 +1,7 @@
-# amazon_clone
+# Duka Letu
 
-This is a practice project where build a full amazon clone app with functionalities such as ordering items, authentication and authorization
 
-![screenshot](./public/images/amazon.png)
+![screenshot](./public/images/dukaletu.png)
 
 ## Built With
 
@@ -25,9 +24,9 @@ This is a practice project where build a full amazon clone app with functionalit
 
 Open your terminal or text editor and use next command
 
-        git clone https://github.com/emmanuelkamala/amazon_clone.git
+        git clone https://github.com/emmanuelkamala/dukaletu.git
 
-        cd amazon_clone
+        cd dukaletu
 
         Run 'npm install' command to install package dependencies.
 
@@ -63,9 +62,6 @@ Feel free to check the [issues page](issues/).
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Academind
 
 ## 📝 License
 
