@@ -155,10 +155,23 @@ a.brand {
   flex: 2 1 50rem;
 }
 
+.col-3 {
+  min-width: 30rem;
+}
+
+.space {
+  margin-left: 10rem;
+}
 /* images */
 
 img {
   border-radius: 0.5rem;
+}
+
+img.small {
+  max-width: 5rem;
+  width: 100%;
+
 }
 
 img.medium {
