@@ -42,7 +42,7 @@ function ProductScreen(props) {
                   <Rating rating={product.rating} numReviews={product.numReviews}></Rating>
                 </li>
                 <li>
-                  Price: ${product.price}
+                  Price: {product.price}/=
                 </li>
                 <li>
                   Description: <p>{product.description}</p>
