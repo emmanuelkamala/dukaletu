@@ -1,5 +1,5 @@
 {
-  "name": "amazon_clone",
+  "name": "dukaletu",
   "type": "module",
   "version": "1.0.0",
   "description": "",
@@ -9,18 +9,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emmanuelkamala/amazon_clone.git"
+    "url": "git+https://github.com/emmanuelkamala/dukaletu.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/emmanuelkamala/amazon_clone/issues"
+    "url": "https://github.com/emmanuelkamala/dukaletu/issues"
   },
-  "homepage": "https://github.com/emmanuelkamala/amazon_clone#readme",
+  "homepage": "https://github.com/emmanuelkamala/dukaletu#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
     "mongoose": "^5.13.2"
   },
   "devDependencies": {
