@@ -7,6 +7,8 @@ import userRouter from './routes/userRouter.js';
 dotenv.config();
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const MONGO_URI = 'mongodb+srv://ejoka:tanzania@cluster0.zlvvs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
