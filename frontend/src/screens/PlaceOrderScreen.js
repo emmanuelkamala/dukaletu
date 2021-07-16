@@ -8,6 +8,12 @@ const PlaceOrderScreen = () => {
   // if (!cart.paymentMethod){
   //   props.history.push('/payment');
   // }
+
+  const toPrice = num => Number(num);
+  cart.itemsPrice = toPrice(cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0));
+  cart.shippingPrice = cart.itemsPrice > 100 ? toPrice(0) : toPrice(10)
+  cart.taxPrice = toPrice(0.18 * itemsPrice);
+  cart.totalPrice = cart.itemsPrice + cart.shippingAddress + cart.taxPrice;
   console.log(cart);
   return (
     <div>
@@ -61,7 +67,37 @@ const PlaceOrderScreen = () => {
           </ul>
         </div>
         <div className='col-1'>
-          
+          <div className="card card-body">
+            <ul>
+              <li>
+                <h2>Order Summary</h2>
+              </li>
+              <li>
+                <div className="row">
+                  <div>Items</div>
+                  <div>tshs. {cart.itemsPrice}</div>
+                </div>
+              </li>
+              <li>
+                <div className="row">
+                  <div>Shipping</div>
+                  <div>tshs. {cart.shippingPrice}</div>
+                </div>
+              </li>
+              <li>
+                <div className="row">
+                  <div>Tax</div>
+                  <div>tshs. {cart.taxPrice}</div>
+                </div>
+              </li>
+              <li>
+                <div className="row">
+                  <div><strong>Total Price</strong></div>
+                  <div>tshs. {cart.totalPrice}</div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
