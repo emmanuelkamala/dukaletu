@@ -10,6 +10,8 @@ function App() {
   
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart;
+  const userSignin = useSelector(state => state.userSignin);
+  const { userInfo } = userSignin;
 
   return (
    <BrowserRouter>
@@ -26,7 +28,15 @@ function App() {
             )
           }
         </Link>
-        <Link to="/signin">Sign In</Link>
+        {
+          userInfo ? (
+            <Link to="#">{userInfo.name}</Link>
+          ) :
+          (
+            <Link to="/signin">Sign In</Link>
+          )
+        }
+        
       </div>
 
     </header>
