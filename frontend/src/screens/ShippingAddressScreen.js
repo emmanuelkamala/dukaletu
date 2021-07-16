@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { saveShippingAddress } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps'
 
-const ShippingAddressScreen = () => {
-
+const ShippingAddressScreen = (props) => {
+  const userSignin = useSelector(state => state.userSignin);
+  const { userInfo } = userSignin;
+  if (!userInfo) {
+    props.history.push('/signin');
+  }
   const [fullName, setFullName] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
@@ -13,7 +18,8 @@ const ShippingAddressScreen = () => {
 
   const submitHandler = e => {
     e.preventDefault();
-    dispatch(saveShippingAddress(fullName, address, city, postalCode, country));
+    dispatch(saveShippingAddress({fullName, address, city, postalCode, country}));
+    props.history.push('/payment');
   } 
 
   return (
