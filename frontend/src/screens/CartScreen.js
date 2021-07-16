@@ -81,9 +81,11 @@ function CartScreen(props) {
               </h2>
             </li>
             <li>
-              <button type="button" onClick={checkoutHandler} className="primary block" disabled={cartItems.length === 0}>
-                Proceed to Checkout
-              </button>
+              <Link to='/shipping'>
+                <button type="button" onClick={checkoutHandler} className="primary block" disabled={cartItems.length === 0}>
+                  Proceed to Checkout
+                </button>
+              </Link>
             </li>
           </ul>
         </div>
