@@ -12,9 +12,12 @@ const PlaceOrderScreen = () => {
   const toPrice = num => Number(num);
   cart.itemsPrice = toPrice(cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0));
   cart.shippingPrice = cart.itemsPrice > 100 ? toPrice(0) : toPrice(10)
-  cart.taxPrice = toPrice(0.18 * itemsPrice);
-  cart.totalPrice = cart.itemsPrice + cart.shippingAddress + cart.taxPrice;
-  console.log(cart);
+  cart.taxPrice = toPrice(0.18 * cart.itemsPrice);
+  cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
+  const placeOrderHandler = () => {
+
+  }
+
   return (
     <div>
       <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
@@ -34,7 +37,7 @@ const PlaceOrderScreen = () => {
             </li>
             <li>
               <div className='card card-body'>
-                <h2>Payment</h2>
+                <h2>Payment Method</h2>
                 <p>
                   <strong>Payment: </strong>{cart.paymentMethod}
                 </p>
@@ -80,7 +83,7 @@ const PlaceOrderScreen = () => {
               </li>
               <li>
                 <div className="row">
-                  <div>Shipping</div>
+                  <div>Shipping Price</div>
                   <div>tshs. {cart.shippingPrice}</div>
                 </div>
               </li>
@@ -95,6 +98,14 @@ const PlaceOrderScreen = () => {
                   <div><strong>Total Price</strong></div>
                   <div>tshs. {cart.totalPrice}</div>
                 </div>
+              </li>
+              <li>
+                  <button 
+                    type="button" 
+                    onClick={placeOrderHandler} 
+                    className="primary block"
+                    disabled={cart.cartItems.length === 0}
+                  >Place Order</button>
               </li>
             </ul>
           </div>
